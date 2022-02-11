@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <main>
-      <header>
+      <nav>
         <router-link to="/mainpage"></router-link> 
-      </header> 
+      </nav> 
       <router-view/> 
     </main>
     
