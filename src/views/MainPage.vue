@@ -1,6 +1,6 @@
 <template>
     <div  id="container" class="">
-        <nav class="sticky top-0 box-border w-full p-2 text-center bg-white shadow-sm">
+        <nav class="sticky top-0 w-full p-2 text-center bg-white shadow-sm">
             <h1 class="font-bold text-base">Faktur Gaji</h1>
         </nav>
         <main id="faktur_gaji" class="box-border md:box-content w-full max-h-full border-t-2">
@@ -108,25 +108,199 @@
                     </div> 
                 </section>   
             </section>
-            <section id="upah_borongan">
-            <div class="float-left">
-                <div id="header" class="">
-                    <header class="text-base font-bold p-4">Upah Borongan</header>
+            <section id="upah_borongan" class="border-t-4">
+            <section>
+                    <div id="header" class="border-b-2">
+                        <header class="text-base font-bold pl-4 pt-4 pb-2">Upah Borongan</header>
+                    </div>
+                </section>
+                <div class="float-left pt-2">
+                    <div>
+                        <p class="text-sm pl-4">Mencuci</p>
+                        <p class="text-xs pl-4 text-gray-400">100KG</p>
+                    </div>
+                    <div class="pt-1">
+                        <p class="text-sm pl-4">Menyetrika</p>
+                        <p class="text-xs pl-4 text-gray-400">50KG</p>
+                    </div>
                 </div>
-                <div>
-                    <p class="text-sm pl-4">Mencuci</p>
-                    <p class="text-xs pl-4 text-gray-400">100KG</p>
+                <section class="float-right">
+                    <div class="pr-3">
+                        <dl class="container float-right items-center flex justify-between border-b-2 border-white m-2 pl-12">
+                            <!-- Property name -->
+                            <dt class="text-sm pt-1">20.000</dt>
+
+                            <!-- Property value -->
+                            <img src="../assets/disabledicon.svg">
+                        </dl>
+                    </div>
+                    <div class="float-right pr-3">
+                        <dl class="container float-right items-center flex justify-between border-b-2 border-white m-2 pl-12">
+                            <!-- Property name -->
+                            <dt class="text-sm pt-1">80.000</dt>
+
+                            <!-- Property value -->
+                            <img src="../assets/disabledicon.svg">
+                        </dl>
+                    </div>
+                </section>
+                <section>
+                    <div id="subtotal_upah" class="border-b-8">
+                        <dl class="container items-center flex justify-between m-2 p-2 border-dashed border-t-2">
+                            <!-- Property name -->
+                            <dt class="text-base font-semibold pt-2">Subtotal Upah</dt>
+
+                            <!-- Property value -->
+                            <dd class="text-base font-semibold pr-4 pt-2">Rp 100.000</dd>
+                        </dl>
+                    </div>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <div id="header__komisi" class="border-b-2 border-t-4">
+                        <header class="text-base font-bold pt-4 pl-4 pb-2">Komisi</header>
+                    </div>
+                </section>
+                <section class="float-left">
+                    <div id="tambah_komisi" class="container float-left pt-2">
+                        <dl class="container items-center flex justify-between m-1 pl-3 pb-1">
+                            <img src="../assets/plusicon.svg" alt="">
+                            <dt class="text-blue-600 text-sm font-semibold pt-1 p">Tambah komisi lain...</dt>
+                        </dl>
+                    </div>
+                    <div class="pl-5">
+                        <p class="text-sm">Bonus Target 1</p>
+                    </div>
+                </section>
+                <section class="float-right">
+                    <div class="float-right pr-3 pt-9">
+                        <dl class="container float-right items-center flex justify-between border-b-2 border-white m-2 pl-12">
+                            <!-- Property name -->
+                            <dt class="text-sm">200.000</dt>
+
+                            <!-- Property value -->
+                            <img src="../assets/editicon.svg">
+                        </dl>
+                    </div>
+                </section>
+                <section>
+                    <div id="subtotal_komisi" class="border-b-8">
+                        <dl class="container items-center flex justify-between m-2 p-2 border-dashed border-t-2">
+                            <!-- Property name -->
+                            <dt class="text-base font-semibold pt-2">Subtotal Komisi</dt>
+
+                            <!-- Property value -->
+                            <dd class="text-base font-semibold pr-4 pt-2">Rp 200.000</dd>
+                        </dl>
+                    </div>
+                </section>
+            </section>
+            <section>
+                <div class="border-t-8 border-b-8">
+                    <dl class="container items-center flex justify-between m-2 p-1">
+                        <!-- Property name -->
+                        <dt class="text-lg font-semibold text-green-400 pl-1">Total Gaji Kotor</dt>
+
+                        <!-- Property value -->
+                        <dd class="text-lg font-semibold text-green-400 pr-5">Rp 2.824.000</dd>
+                    </dl>
                 </div>
-            </div>             
+            </section>
+            <section>
+                <div class="border-t-4 border-b-2 pb-3">
+                    <header class="text-base font-bold pt-4 pl-4">Tanggungan</header>
+                    <p class="text-xs pl-4 text-gray-500">Karyawan ini memiliki tanggungan Rp 570.000</p>
+                </div>
+            </section>
+            <section class="float-left">
+                <div id="tambah_komisi" class="container float-left pt-2">
+                    <dl class="container float-left items-center flex justify-between m-1 pl-3 pb-3">
+                        <img src="../assets/plusicon.svg" alt="">
+                        <dt class="text-blue-600 text-sm font-semibold pt-1">Tambah pembayaran tanggungan...</dt>
+                    </dl>
+                </div>
+                <div class="pb-3">
+                    <p class="text-sm pl-4">Ganti Barang Hilang</p>
+                    <p class="text-xs text-gray-500 pl-4">Baju yang hilang warna merah</p>
+                </div>
+                <div class="pb-3">
+                    <p class="text-sm pl-4">Denda Keterlambatan</p>
+                    <p class="text-xs text-gray-500 pl-4">karena terlambat 3 hari berturut - turut</p>
+                </div>
+            </section>
+            <section class="float-right">
+                <div class="float-right pr-3">
+                    <dl class="container float-right items-center flex justify-between border-b-2 border-white m-2 pt-14">
+                        <!-- Property name -->
+                        <dt class="text-sm text-red-500">50.000</dt>
+
+                        <!-- Property value -->
+                        <img src="../assets/editred.svg">
+                    </dl>
+                </div>       
+            </section>
+            <section>
+                <div class="float-right pr-3">
+                    <dl class="container float-right items-center flex justify-between border-b-2 border-white m-2 pt-3">
+                        <!-- Property name -->
+                        <dt class="text-sm text-red-500">50.000</dt>
+
+                        <!-- Property value -->
+                        <img src="../assets/editred.svg">
+                    </dl>
+                </div>
+            </section>
+            <section class="">
+                <div class="border-b-8">
+                    <dl class="container items-center flex justify-between m-2 p-1 border-dashed border-t-2 pt-4">
+                        <!-- Property name -->
+                        <dt class="text-lg font-semibold pl-1">Tanggungan Dibayar</dt>
+
+                        <!-- Property value -->
+                        <dd class="text-lg font-semibold text-red-500 pr-6">(-) Rp 70.000</dd>
+                    </dl>
+                </div>
+            </section>
+            <section class="border-t-4 pt-4">
+                <div class="inline-block pl-4">
+                    <p class="text-xl font-bold text-blue-500">Total Gaji Bersih</p>
+                </div>
+                <div class="inline-block">
+                    <img src="../assets/checkicon.svg" alt="">
+                </div>
+                <div class="inline-block pl-14">
+                    <p class="text-xl font-bold text-blue-500 pl-2">Rp 2.124.000</p>
+                </div>
+                <div class="pl-4 pt-2 pb-4">
+                    <p class="text-xs text-gray-500">Nominal akhir yang diterima karyawan setelah ditambah komisi dikurangi pembayaran tanggungan (jika ada).</p>
+                </div>
+                <div class="flex justify-center pb-8">
+                    <router-link to='/'>
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white text-base font-semibold py-3 px-32 rounded">
+                            Berikutnya 
+                        </button>
+                    </router-link>
+                </div>
             </section>
         </main>
     </div>
 </template>
 
 <script>
-export default {
-    
-};
+// import axios from "axios";
+// export default {
+//     data() {
+//         return {
+//             contents: null,
+//         }
+//     },
+//     mounted () {
+//         axios
+//             .get('http://localhost:8080/#/mainpage/salary/inquiry')
+//             .then(response => (this.info = response))
+//     }
+// };
 </script>
 
 <style src="../assets/tailwind.css">
