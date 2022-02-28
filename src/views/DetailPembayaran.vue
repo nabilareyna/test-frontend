@@ -56,7 +56,7 @@
                     <dd class="text-base font-semibold pr-6 text-red-600">(-) Rp 70.000</dd>
                 </dl>
             </div>
-            <div id="total_gaji_bersih" class="">
+            <div id="total_gaji_bersih" class="border-b-8">
                 <dl class="container items-center flex justify-between m-2 p-4">
                     <!-- Property name -->
                     <dt class="text-base font-extrabold text-blue-600">Total Gaji Bersih</dt>
@@ -66,6 +66,42 @@
                 </dl>
             </div>
         </section>
+        <section class="border-t-8">
+            <div class="m-6 pt-4">
+                <div class="">
+                <p class="text-sm text-gray-500">Bayar dari Rekening*</p>
+                    <select name="rekening" id="" class="block text-base w-full border border-gray-200 hover:border-gray-300 px-4 py-3 pr-8 rounded leading-normal focus:outline-none ">
+                        <label for=""></label>
+                        <option value="">Pilih Rekening Bank</option>
+                    </select>
+                </div>
+            </div>
+            <div class="m-6">
+                <div class="">
+                <p class="text-sm text-gray-500">Dicatat Pada Tanggal*</p>
+                    <select name="Tanggal" id="" class="block text-base w-full border border-gray-200 hover:border-gray-300 px-4 py-3 pr-8 rounded leading-normal focus:outline-none ">
+                        <label for=""></label>
+                        <option value="">Pilih Tanggal</option>
+                    </select>
+                </div>
+            </div>
+            <div class="m-6">
+                <div class="">
+                <p class="text-sm text-gray-500">Keterangan</p>
+                    <select name="Tanggal" id="" class="block text-base w-full border border-gray-200 hover:border-gray-300 px-4 py-3 pr-8 rounded leading-normal focus:outline-none ">
+                        <label for=""></label>
+                        <option value="">Tambahkan Keterangan</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+        <div class="flex justify-center pt-20">
+            <router-link to='/detail'>
+                <button class="bg-blue-600 hover:bg-blue-700 text-white text-base font-semibold py-3 px-32 rounded">
+                    Submit Gaji 
+                </button>
+            </router-link>
+        </div>
     </main>
 </template>
 

@@ -1,9 +1,7 @@
 <template>
   <div id="app">
     <main>
-      <nav>
         <router-link to="/mainpage"></router-link> 
-      </nav> 
       <router-view/> 
     </main>
     

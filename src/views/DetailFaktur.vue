@@ -1,108 +1,76 @@
 <template>
-    <div  id="maincontainer" class="">
+    <main id="" class="">
         <nav class="sticky top-0 w-full p-2 text-center bg-white shadow-md">
             <h1 class="font-bold text-base">Faktur Gaji</h1>
         </nav>
-        <main id="faktur_gaji" class="box-border md:box-content w-full max-h-full border-t-2">
-            <section id="header" class="box-border md:box-content w-full max-h-full border-dashed border-b-2 bg-white">
-                <header class="font-bold pt-2 pl-4 text-lg">{{ info.nama_karyawan }}</header>
-                <p class="font-light pl-4 pb-2 text-gray-400 text-sm">{{ info.tanggal_awal }} - {{ info.tanggal_akhir }}</p>
+        <div id="faktur_gaji" class="box-border md:box-content w-full max-h-full border-t-2">
+            <section id="header" class="box-border md:box-content w-full max-h-full bg-white">
+                <header class="font-bold pt-2 pl-4 text-lg">GJI200121280129001</header>
+                <p class="font-light pl-4 pb-2 text-gray-400 text-sm">Dicatat: 31 Januari 2021</p>
             </section>
-            <section id="kehadiran" class="box-border w-full h-full pt-2 border-b-8 pb-2">
-                <div>
-                    <!-- A property item -->
-                    <dl class="container items-center flex justify-between border-b-2 border-white m-0 p-3">
-                        <!-- Property name -->
-                        <dt class="text-gray-400 font-semibold text-sm">Masuk {{ info.total_kehadiran }} Hari</dt>
-                        <!-- Property value -->
-                        <button class="button text-blue-600 font-semibold text-sm" @click="open = true">
-                        Ubah Kehadiran
-                        </button>
-                            <div v-if="open" class="modal shadow-md">
-                                <nav class="w-full p-2 bg-white shadow-sm">
-                                    <div class="inline-block justify-self-center">
-                                        <p class="font-bold text-base text-center">Ubah Kehadiran</p>
-                                    </div>
-                                    <button @click="open = false" class=""><img src="../assets/closeicon.svg" class="inline-block"></button>
-                                </nav>
-                            </div>
-                    </dl>
-                </div>
+            <section id="header" class="box-border md:box-content w-full max-h-full border-b-8 bg-white">
+                <header class="font-bold border-dashed border-t-2 pl-4 text-lg">Bu Adara Olivia</header>
+                <p class="font-light pl-4 pb-2 text-gray-400 text-sm">Periode: 01 Januari 2021 - 31 Januari 2021</p>
             </section>
-            <section id="gaji" class="">
+            <section id="gaji" class="border-t-8">
                 <div id="container" class="float-left">
                     <div id="header" class="">
                         <header class="font-bold text-base p-3 pl-4">Gaji</header>
                         <div id="details" class="">
                             <div id="gaji__pokok" class="pb-3">
-                                <p class="text-sm pl-4">{{ info.pengaturan_gaji[0].nama }}</p>
-                                <p class="text-xs text-gray-400 pl-4">{{ info.pengaturan_gaji[0].nominal }} x {{ info.total_periode }} {{ info.pengaturan_gaji[0].jenis }}</p>
+                                <p class="text-sm pl-4">Gaji Pokok</p>
+                                <p class="text-xs text-gray-400 pl-4">800.000 x 1 periode</p>
                             </div>
                             <div id="gaji__uang_makan" class="pb-3">
-                                <p class="text-sm pl-4">{{ info.pengaturan_gaji[1].nama }}</p>
-                                <p class="text-xs pl-4 text-gray-400">{{ info.pengaturan_gaji[1].nominal }} x {{ info.total_kehadiran }} {{ info.pengaturan_gaji[1].jenis }}</p>
+                                <p class="text-sm pl-4">Uang Makan</p>
+                                <p class="text-xs pl-4 text-gray-400">10.000 x 22 kehadiran</p>
                             </div>
                             <div id="gaji__uang_absen" class="pb-3">
-                                <p class="text-sm pl-4">{{ info.pengaturan_gaji[2].nama }}</p>
-                                <p class="text-xs pl-4 text-gray-400">{{ info.pengaturan_gaji[2].nominal }} x {{ info.total_kehadiran }} {{ info.pengaturan_gaji[2].jenis }}</p>
+                                <p class="text-sm pl-4">Uang Absen</p>
+                                <p class="text-xs pl-4 text-gray-400">12.000 x 22 kehadiran</p>
                             </div>
                             <div id="gaji__uang_transport" class="pb-3">
-                                <p class="text-sm pl-4">{{ info.pengaturan_gaji[3].nama }}</p>
-                                <p class="text-xs pl-4 text-gray-400">{{ info.pengaturan_gaji[3].nominal }} x {{ info.total_kehadiran }} {{ info.pengaturan_gaji[3].jenis }}</p>
+                                <p class="text-sm pl-4">Uang Transport</p>
+                                <p class="text-xs pl-4 text-gray-400">15.000 x 22 kehadiran</p>
                             </div>
                             <div id="gaji__uang_snack" class="pb-3">
-                                <p class="text-sm pl-4">{{ info.pengaturan_gaji[4].nama }}</p>
-                                <p class="text-xs pl-4 text-gray-400">{{ info.pengaturan_gaji[4].nominal }} x {{ info.total_kehadiran }} {{ info.pengaturan_gaji[4].jenis }}</p>
+                                <p class="text-sm pl-4">Uang Snack</p>
+                                <p class="text-xs pl-4 text-gray-400">5.000 x 22 kehadiran</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <section id="editgaji" class="container">
-                    <div id="edit_gaji_pokok" class="float-right pt-10 pr-3">
+                    <div id="edit_gaji_pokok" class="float-right pt-10">
                         <!-- A property item -->
                         <dl class="container float-right items-center flex justify-between border-b-2 border-white m-2 pt-2">
                             <!-- Property name -->
-                            <dt class="text-sm">{{ (info.pengaturan_gaji[0].nominal) * (info.total_periode) }}</dt>
-                            
-                            <!-- Property value -->
-                            <img src="../assets/editicon.svg">
+                            <dt class="text-sm">800.000</dt>
                         </dl>
                     </div>
-                    <div id="edit_uang_makan" class="float-right pt-3 pr-3">
+                    <div id="edit_uang_makan" class="float-right pt-3">
                             <!-- A property item -->
-                        <dl class="container float-right items-center flex justify-between border-b-2 border-white m-2 pl-24">
+                        <dl class="container float-right items-center flex justify-between border-b-2 border-white m-2 pl-28">
                             <!-- Property name -->
-                            <dt class="text-sm">{{ (info.pengaturan_gaji[1].nominal) * (info.total_kehadiran) }}</dt>
-
-                            <!-- Property value -->
-                            <img src="../assets/editicon.svg">
+                            <dt class="text-sm">220.000</dt>
                         </dl>
                     </div>
-                    <div id="edit_uang_absen" class="float-right pt-3 pr-3">
+                    <div id="edit_uang_absen" class="float-right pt-3">
                         <dl class="container float-right items-center flex justify-between border-b-2 border-white m-2 pl-12">
                             <!-- Property name -->
-                            <dt class="text-sm">{{ (info.pengaturan_gaji[2].nominal) * (info.total_kehadiran) }}</dt>
-
-                            <!-- Property value -->
-                            <img src="../assets/editicon.svg">
+                            <dt class="text-sm">264.000</dt>
                         </dl>
                     </div>
-                    <div id="edit_uang_transport" class="float-right pt-3 pr-3">
-                        <dl class="container float-right items-center flex justify-between border-b-2 border-white m-2 pl-12">
+                    <div id="edit_uang_transport" class="float-right pt-3">
+                        <dl class="container float-right items-center flex justify-between border-b-2 border-white m-2 pl-28">
                             <!-- Property name -->
-                            <dt class="text-sm">{{ (info.pengaturan_gaji[3].nominal) * (info.total_kehadiran) }}</dt>
-
-                            <!-- Property value -->
-                            <img src="../assets/editicon.svg">
+                            <dt class="text-sm">330.000</dt>
                         </dl>
                     </div>
-                    <div id="edit_uang_snack" class="float-right pt-3 pr-3">
+                    <div id="edit_uang_snack" class="float-right pt-3">
                         <dl class="container float-right items-center flex justify-between border-b-2 border-white m-2 pl-12">
                             <!-- Property name -->
-                            <dt class="text-sm">{{ (info.pengaturan_gaji[4].nominal) * (info.total_kehadiran) }}</dt>
-
-                            <!-- Property value -->
-                            <img src="../assets/editicon.svg">
+                            <dt class="text-sm">110.000</dt>
                         </dl>
                     </div>
                 </section>
@@ -113,7 +81,7 @@
                                 <dt class="text-base font-semibold pt-2">Subtotal Gaji</dt>
 
                                 <!-- Property value -->
-                                <dd class="text-base font-semibold pr-4 pt-2">Rp {{ ((info.pengaturan_gaji[4].nominal) * (info.total_kehadiran))+((info.pengaturan_gaji[3].nominal) * (info.total_kehadiran))+((info.pengaturan_gaji[2].nominal) * (info.total_kehadiran))+((info.pengaturan_gaji[1].nominal) * (info.total_kehadiran))+((info.pengaturan_gaji[0].nominal) * (info.total_periode)) }}</dd>
+                                <dd class="text-base font-semibold pr-4 pt-2">Rp 2.524.000</dd>
                             </dl>
                     </div> 
                 </section>   
@@ -126,31 +94,30 @@
                 </section>
                 <div class="float-left pt-2">
                     <div>
-                        <p class="text-sm pl-4">{{ info.pengaturan_upah[0].nama }}</p>
-                        <p class="text-xs pl-4 text-gray-400">{{ info.pengerjaan_upah[1].nominal }} {{ info.pengerjaan_upah[1].satuan }}</p>
+                        <p class="text-sm pl-4">Mencuci</p>
+                        <p class="text-xs pl-4 text-gray-400">100KG</p>
                     </div>
                     <div class="pt-1">
-                        <p class="text-sm pl-4">{{ info.pengaturan_upah[0].nama }}</p>
-                        <p class="text-xs pl-4 text-gray-400">{{ info.pengerjaan_upah[0].nominal }} {{ info.pengerjaan_upah[0].satuan }}</p>
+                        <p class="text-sm pl-4">Menyetrika</p>
+                        <p class="text-xs pl-4 text-gray-400">50KG</p>
                     </div>
                 </div>
                 <section class="float-right">
-                    <div class="pr-3">
+                    <div class="">
                         <dl class="container float-right items-center flex justify-between border-b-2 border-white m-2 pl-12">
                             <!-- Property name -->
                             <dt class="text-sm pt-1">20.000</dt>
 
-                            <!-- Property value -->
-                            <img src="../assets/disabledicon.svg">
+                            
                         </dl>
                     </div>
-                    <div class="float-right pr-3">
+                    <div class="float-right">
                         <dl class="container float-right items-center flex justify-between border-b-2 border-white m-2 pl-12">
                             <!-- Property name -->
                             <dt class="text-sm pt-1">80.000</dt>
 
                             <!-- Property value -->
-                            <img src="../assets/disabledicon.svg">
+                            
                         </dl>
                     </div>
                 </section>
@@ -173,29 +140,11 @@
                     </div>
                 </section>
                 <section class="float-left">
-                    <div id="tambah_komisi" class="container float-left pt-2">
-                        <dl class="container items-center flex justify-between m-1 pl-3 pb-1">
-                            <img src="../assets/plusicon.svg" alt="">
-                            <dt class="text-blue-600 text-sm font-semibold pt-1 p">Tambah komisi lain...</dt>
-                        </dl>
-                    </div>
-                    <div class="pl-5">
-                        <p class="text-sm">Bonus Target 1</p>
-                    </div>
-                </section>
-                <section class="float-right">
-                    <div class="float-right pr-3 pt-9">
-                        <dl class="container float-right items-center flex justify-between border-b-2 border-white m-2 pl-12">
-                            <!-- Property name -->
-                            <dt class="text-sm">200.000</dt>
-
-                            <!-- Property value -->
-                            <img src="../assets/editicon.svg">
-                        </dl>
-                    </div>
+                    
+                    
                 </section>
                 <section>
-                    <div id="subtotal_komisi" class="border-b-8">
+                    <div id="subtotal_komisi" class="">
                         <dl class="container items-center flex justify-between m-2 p-2 border-dashed border-t-2">
                             <!-- Property name -->
                             <dt class="text-base font-semibold pt-2">Subtotal Komisi</dt>
@@ -207,7 +156,7 @@
                 </section>
             </section>
             <section>
-                <div class="border-t-8 border-b-8">
+                <div class="border-t-2 border-b-8">
                     <dl class="container items-center flex justify-between m-2 p-1">
                         <!-- Property name -->
                         <dt class="text-lg font-semibold text-green-400 pl-1">Total Gaji Kotor</dt>
@@ -224,12 +173,7 @@
                 </div>
             </section>
             <section class="float-left">
-                <div id="tambah_komisi" class="container float-left pt-2">
-                    <dl class="container float-left items-center flex justify-between m-1 pl-3 pb-3">
-                        <img src="../assets/plusicon.svg" alt="">
-                        <dt class="text-blue-600 text-sm font-semibold pt-1">Tambah pembayaran tanggungan...</dt>
-                    </dl>
-                </div>
+                
                 <div class="pb-3">
                     <p class="text-sm pl-4">Ganti Barang Hilang</p>
                     <p class="text-xs text-gray-500 pl-4">Baju yang hilang warna merah</p>
@@ -244,9 +188,6 @@
                     <dl class="container float-right items-center flex justify-between border-b-2 border-white m-2 pt-14">
                         <!-- Property name -->
                         <dt class="text-sm text-red-500">50.000</dt>
-
-                        <!-- Property value -->
-                        <img src="../assets/editred.svg">
                     </dl>
                 </div>       
             </section>
@@ -255,9 +196,6 @@
                     <dl class="container float-right items-center flex justify-between border-b-2 border-white m-2 pt-3">
                         <!-- Property name -->
                         <dt class="text-sm text-red-500">50.000</dt>
-
-                        <!-- Property value -->
-                        <img src="../assets/editred.svg">
                     </dl>
                 </div>
             </section>
@@ -287,34 +225,16 @@
                 </div>
                 <div class="flex justify-center pb-8">
                     <router-link to='/'>
-                        <button class="bg-blue-600 hover:bg-blue-700 text-white text-base font-semibold py-3 px-32 rounded">
-                            Berikutnya 
+                        <button class="bg-green-600 hover:bg-green-700 text-white text-base font-semibold py-3 px-32 rounded">
+                            Cetak 
                         </button>
                     </router-link>
                 </div>
             </section>
-        </main>
-    </div>
+        </div>
+    </main>
 </template>
 
-<script>
-import axios from 'axios';
-export default {
-    data() {
-        return {
-        info: null,
-        open: false,
-        }
-    },
-    mounted() {
-        document.title = 'Faktur Gaji | SmartActors';
-        axios
-            .get('https://boss.smartlink.id/salary/inquiry')
-            .then(response => (this.info = response.data.data))
-    }
-};
-
-
-</script>
+<script></script>
 
 <style src="../assets/tailwind.css">
