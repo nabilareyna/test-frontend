@@ -6,7 +6,7 @@
                     <img src="../assets/backicon.svg" alt="" class="inline-block">
                 </button>
             </router-link>            
-            <div class="inline-block pl-20">
+            <div class="inline-block pl-24">
                 <p class="font-bold text-base text-center pl-2">Detail Pembayaran</p>
             </div>
         </nav>
@@ -67,35 +67,31 @@
             </div>
         </section>
         <section class="border-t-8">
-            <div class="m-6 pt-4">
-                <div class="">
-                <p class="text-sm text-gray-500">Bayar dari Rekening*</p>
-                    <select name="rekening" id="" class="block text-base w-full border border-gray-200 hover:border-gray-300 px-4 py-3 pr-8 rounded leading-normal focus:outline-none ">
-                        <label for=""></label>
-                        <option value="">Pilih Rekening Bank</option>
-                    </select>
+            <form action="">
+                <div class="m-6 pt-4">
+                    <div class="">
+                        <p class="text-sm text-gray-500">Bayar dari Rekening*</p>
+                            <select name="rekening" id="" class="block text-base w-full border border-gray-200 hover:border-gray-300 px-4 py-3 pr-8 rounded leading-normal focus:outline-none ">
+                                <label for=""></label>
+                                <option value="">Pilih Rekening Bank</option>
+                            </select>
+                    </div>
                 </div>
-            </div>
-            <div class="m-6">
-                <div class="">
-                <p class="text-sm text-gray-500">Dicatat Pada Tanggal*</p>
-                    <select name="Tanggal" id="" class="block text-base w-full border border-gray-200 hover:border-gray-300 px-4 py-3 pr-8 rounded leading-normal focus:outline-none ">
-                        <label for=""></label>
-                        <option value="">Pilih Tanggal</option>
-                    </select>
+                <div class="m-6">
+                    <div class="">
+                        <p class="text-sm text-gray-500">Dicatat Pada Tanggal*</p>
+                            <input type="date" class="block text-base w-full border border-gray-200 hover:border-gray-300 px-4 py-3 rounded leading-normal focus:outline-none">
+                    </div>
                 </div>
-            </div>
-            <div class="m-6">
-                <div class="">
-                <p class="text-sm text-gray-500">Keterangan</p>
-                    <select name="Tanggal" id="" class="block text-base w-full border border-gray-200 hover:border-gray-300 px-4 py-3 pr-8 rounded leading-normal focus:outline-none ">
-                        <label for=""></label>
-                        <option value="">Tambahkan Keterangan</option>
-                    </select>
+                <div class="m-6">
+                    <div class="">
+                        <p class="text-sm text-gray-500">Keterangan</p>
+                            <input type="text" class="block text-base w-full border border-gray-200 hover:border-gray-300 px-4 py-3 pr-8 rounded leading-normal focus:outline-none">
+                    </div>
                 </div>
-            </div>
+            </form>
         </section>
-        <div class="flex justify-center pt-20">
+        <div class="flex justify-center pt-10">
             <router-link to='/detail'>
                 <button class="bg-blue-600 hover:bg-blue-700 text-white text-base font-semibold py-3 px-32 rounded">
                     Submit Gaji 

@@ -144,13 +144,22 @@
                     
                 </section>
                 <section>
+                    <div class="pb-2">
+                        <dl class="container items-center flex justify-between m-2 p-2">
+                            <!-- Property name -->
+                            <dt class="text-sm font-semibold">Bonus Target 1</dt>
+
+                            <!-- Property value -->
+                            <dd class="text-sm font-semibold pr-4">Rp 200.000</dd>
+                        </dl>
+                    </div>
                     <div id="subtotal_komisi" class="">
                         <dl class="container items-center flex justify-between m-2 p-2 border-dashed border-t-2">
                             <!-- Property name -->
-                            <dt class="text-base font-semibold pt-2">Subtotal Komisi</dt>
+                            <dt class="text-base font-semibold">Subtotal Komisi</dt>
 
                             <!-- Property value -->
-                            <dd class="text-base font-semibold pr-4 pt-2">Rp 200.000</dd>
+                            <dd class="text-base font-semibold pr-4">Rp 200.000</dd>
                         </dl>
                     </div>
                 </section>
@@ -172,8 +181,7 @@
                     <p class="text-xs pl-4 text-gray-500">Karyawan ini memiliki tanggungan Rp 570.000</p>
                 </div>
             </section>
-            <section class="float-left">
-                
+            <section class="float-left pt-2">
                 <div class="pb-3">
                     <p class="text-sm pl-4">Ganti Barang Hilang</p>
                     <p class="text-xs text-gray-500 pl-4">Baju yang hilang warna merah</p>
@@ -185,7 +193,7 @@
             </section>
             <section class="float-right">
                 <div class="float-right pr-3">
-                    <dl class="container float-right items-center flex justify-between border-b-2 border-white m-2 pt-14">
+                    <dl class="container items-center flex justify-between border-b-2 border-white m-2 pt-2 pl-4">
                         <!-- Property name -->
                         <dt class="text-sm text-red-500">50.000</dt>
                     </dl>
@@ -193,7 +201,7 @@
             </section>
             <section>
                 <div class="float-right pr-3">
-                    <dl class="container float-right items-center flex justify-between border-b-2 border-white m-2 pt-3">
+                    <dl class="container items-center flex justify-between border-b-2 border-white m-2 pt-3">
                         <!-- Property name -->
                         <dt class="text-sm text-red-500">50.000</dt>
                     </dl>
@@ -220,12 +228,16 @@
                 <div class="inline-block pl-14">
                     <p class="text-xl font-bold text-blue-500 pl-2">Rp 2.124.000</p>
                 </div>
-                <div class="pl-4 pt-2 pb-4">
+                <div class="pl-4 pt-2 pb-4 border-b-8">
                     <p class="text-xs text-gray-500">Nominal akhir yang diterima karyawan setelah ditambah komisi dikurangi pembayaran tanggungan (jika ada).</p>
+                </div>
+                <div class="pl-4 pb-8">
+                    <p class="text-xs text-gray-500 border-t-8 pt-4">Keterangan</p>
+                    <p class= "text-sm">Lebih Semangat lagi ya</p>
                 </div>
                 <div class="flex justify-center pb-8">
                     <router-link to='/'>
-                        <button class="bg-green-600 hover:bg-green-700 text-white text-base font-semibold py-3 px-32 rounded">
+                        <button class="bg-green-600 hover:bg-green-700 text-white text-base font-semibold py-3 px-36 rounded">
                             Cetak 
                         </button>
                     </router-link>

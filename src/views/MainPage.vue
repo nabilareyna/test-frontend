@@ -1,5 +1,5 @@
 <template>
-    <div  id="maincontainer" class="">
+    <div  id="maincontainer" v-if="info">
         <nav class="sticky top-0 w-full p-2 text-center bg-white shadow-md">
             <h1 class="font-bold text-base">Faktur Gaji</h1>
         </nav>
@@ -18,12 +18,12 @@
                         <button class="button text-blue-600 font-semibold text-sm" @click="open = true">
                         Ubah Kehadiran
                         </button>
-                            <div v-if="open" class="modal shadow-md">
-                                <nav class="w-full p-2 bg-white shadow-sm">
-                                    <div class="inline-block justify-self-center">
-                                        <p class="font-bold text-base text-center">Ubah Kehadiran</p>
+                            <div v-if="open" class="modal shadow-md rounded">
+                                <nav class="w-full p-4 items-center flex bg-white shadow-sm justify-between border-b-2">
+                                    <div class="">
+                                        <p class="font-bold text-base text-center pl-24">Ubah Kehadiran</p>
                                     </div>
-                                    <button @click="open = false" class=""><img src="../assets/closeicon.svg" class="inline-block"></button>
+                                    <button @click="open = false" class=""><img src="../assets/closeicon.svg" class=""></button>
                                 </nav>
                             </div>
                     </dl>
@@ -130,7 +130,7 @@
                         <p class="text-xs pl-4 text-gray-400">{{ info.pengerjaan_upah[1].nominal }} {{ info.pengerjaan_upah[1].satuan }}</p>
                     </div>
                     <div class="pt-1">
-                        <p class="text-sm pl-4">{{ info.pengaturan_upah[0].nama }}</p>
+                        <p class="text-sm pl-4">{{ info.pengaturan_upah[1].nama }}</p>
                         <p class="text-xs pl-4 text-gray-400">{{ info.pengerjaan_upah[0].nominal }} {{ info.pengerjaan_upah[0].satuan }}</p>
                     </div>
                 </div>
@@ -138,7 +138,7 @@
                     <div class="pr-3">
                         <dl class="container float-right items-center flex justify-between border-b-2 border-white m-2 pl-12">
                             <!-- Property name -->
-                            <dt class="text-sm pt-1">20.000</dt>
+                            <dt class="text-sm pt-1">{{ (info.pengaturan_upah[0].nominal * info.pengerjaan_upah[1].nominal) }}</dt>
 
                             <!-- Property value -->
                             <img src="../assets/disabledicon.svg">
@@ -147,7 +147,7 @@
                     <div class="float-right pr-3">
                         <dl class="container float-right items-center flex justify-between border-b-2 border-white m-2 pl-12">
                             <!-- Property name -->
-                            <dt class="text-sm pt-1">80.000</dt>
+                            <dt class="text-sm pt-1">{{ (info.pengaturan_upah[1].nominal * info.pengerjaan_upah[0].nominal) }}</dt>
 
                             <!-- Property value -->
                             <img src="../assets/disabledicon.svg">
@@ -161,7 +161,7 @@
                             <dt class="text-base font-semibold pt-2">Subtotal Upah</dt>
 
                             <!-- Property value -->
-                            <dd class="text-base font-semibold pr-4 pt-2">Rp 100.000</dd>
+                            <dd class="text-base font-semibold pr-4 pt-2">Rp {{ ((info.pengaturan_upah[0].nominal * info.pengerjaan_upah[1].nominal) + (info.pengaturan_upah[1].nominal * info.pengerjaan_upah[0].nominal) ) }}</dd>
                         </dl>
                     </div>
                 </section>
